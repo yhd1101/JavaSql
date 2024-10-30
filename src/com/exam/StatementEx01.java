@@ -32,13 +32,13 @@ public class StatementEx01 {
             // select 이외의 모든 sql문을 사용함 update만 쓰는거 아님.
            // stmt.executeUpdate("insert into dept2 values (51, '영업부','부산')");
 
-//            String sql = "insert into dept2 values(52, '생산부','목포')";
+//            String sql = "insert into dept2 values(53, '연구부','대전')";
 //            stmt.executeUpdate(sql);
             String deptno = "53";
             String dname = "연구부";
             String loc = "대전";
-
-
+            String sql = String.format("insert into dept2 values (%s, '%s','%s')", deptno,dname,loc);
+            stmt.executeUpdate(sql);
             System.out.println("쿼리 실행 성공");
 
         }catch (SQLException e) {
